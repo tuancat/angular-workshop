@@ -1,0 +1,33 @@
+  <form [formGroup]="form" (submit)="onSubmit()">
+    {{ form.controls.email.value }}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"
+      formControlName="email" #email>
+      <span class="text text-danger" *ngIf="form.controls.email.invalid">Email is not valid</span>
+      <span>{{ email.className }}</span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password"
+      formControlName="password">
+      <span class="text text-danger" *ngIf="form.controls.password.invalid">Email is not valid</span>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+
+    <div class="form-group" formArrayName="tags">
+      <span *ngFor="let t of form.controls.tags.controls; let i = index">
+        <label>Tag</label>
+        <input type="text" [formControlName]="i" [value]="t.value" >
+      </span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+
+  <button (click)="onClick()">Click</button>

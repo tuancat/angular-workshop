@@ -1,0 +1,13 @@
+.user {
+    display: flex;
+}
+
+.user-list {
+    height: 45vh;
+    width: 480px;
+    overflow: scroll;
+}
+
+.user-detail {
+    width: 100%;
+}

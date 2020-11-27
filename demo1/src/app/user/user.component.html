@@ -1,0 +1,33 @@
+<div class="user">
+    <div class="user-list">
+        <app-select (changeSelect)="onChange($event)"></app-select>
+    
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <!-- <th scope="col">Email</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Birthday</th>
+              <th scope="col">Salary</th>
+              <th scope="col">Phone</th> -->
+            </tr>
+          </thead>
+          <tbody appList [dataList]="dataList | orderBy: selectedValue">
+          </tbody>
+        </table>
+    </div>
+    
+    
+    <div class="user-detail">
+      <router-outlet></router-outlet>
+    </div>
+
+</div>
+
+<div class="user-view">
+  <router-outlet name="view"></router-outlet>
+</div>
+

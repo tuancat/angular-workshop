@@ -1,0 +1,24 @@
+<div class="row">
+  <h1>Danh sách sản phẩm</h1>
+</div>
+<div class="row table-wrapper-scroll-y my-custom-scrollbar">
+
+  <table class="table table-bordered table-striped mb-0">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of list">
+      <td>{{ p.payload.doc.id }}</td>
+      <td>{{ p.payload.doc.data().name }}</td>
+      <td>
+        {{p.payload.doc.data().price}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

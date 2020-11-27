@@ -1,0 +1,51 @@
+<div class="row">
+  <h1>Danh sách người dùng</h1>
+</div>
+<div class="row ml-2 mb-10" >
+  <button type="text" class="btn btn-primary" (click)="newUser()">Create User</button>
+</div>
+<div class="mt-5 row table-wrapper-scroll-y my-custom-scrollbar">
+
+  <table class="table table-bordered table-striped mb-0">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of dataList ">
+      <td>
+        {{user.id}}
+      </td>
+      <td>
+        {{user.firstName}}
+      </td>
+      <td>
+        {{user.lastName}}
+      </td>
+      <td>
+        {{user.email}}
+      </td>
+      <td>
+        {{user.gender}}
+      </td>
+      <td>
+        {{user.birthday}}
+      </td>
+      <td>
+        {{user.salary}}
+      </td>
+      <td>
+        {{user.phone}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

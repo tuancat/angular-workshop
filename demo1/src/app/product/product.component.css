@@ -1,0 +1,21 @@
+.user {
+  display: flex;
+}
+
+.user-list {
+  height: 45vh;
+  width: 100%;
+  overflow: scroll;
+}
+
+.user-detail {
+  width: 100%;
+}
+.my-custom-scrollbar {
+  position: relative;
+  height: 600px;
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
