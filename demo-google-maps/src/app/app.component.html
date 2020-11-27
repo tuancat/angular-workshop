@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="row">
+        <h1 class="" style="text-align: center">Tạo mới đơn hàng</h1>
+    </div>
+    <div class="row">
+
+        <div class="col-6">
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label>
+                        Mã đơn hàng:
+                    </label>
+                    <input type="text" class="form-control" [(ngModel)]="order.id"/>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>
+                        Tên khách hàng:
+                    </label>
+                    <input type="text" class="form-control" [(ngModel)]="order.customer"/>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>
+                        Tên sản phẩm:
+                    </label>
+                    <input type="text" class="form-control" [(ngModel)]="order.product"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>
+                    Giá sản phẩm:
+                </label>
+                <input type="text" class="form-control" [(ngModel)]="order.price"/>
+            </div>
+            <div class="form-group mt-8">
+                <button type="button" class="btn-warning" (click)="saveOrder()">Lưu trữ</button>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label>Chọn điểm giao hàng:</label>
+                <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+                       placeholder="Chọn điểm giao hàng" autocorrect="off" autocapitalize="off" spellcheck="off"
+                       type="text" #search>
+            </div>
+            <agm-map style="height: 300px;" [latitude]="latitude" [longitude]="longitude" [zoom]="zoom"
+                     (mapClick)="mapClicked($event)">
+                <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+            </agm-map>
+
+        </div>
+    </div>
+    <div class="row mt-8">
+        <h2>Kết quả đơn hàng</h2>
+        <br>
+        <table class="table table-striped">
+            <tr>
+                <td>Mã đơn hàng:</td>
+                <td>{{order.id}}</td>
+            </tr>
+            <tr>
+                <td>Tên sản phẩm:</td>
+                <td>{{order.product}}</td>
+            </tr>
+            <tr>
+                <td>Tên khách hàng:</td>
+                <td>{{order.customer}}</td>
+            </tr>
+            <tr>
+                <td>Giá đơn hàng:</td>
+                <td>{{order.price}}</td>
+            </tr>
+            <tr>
+                <td>Địa chỉ giao hàng:</td>
+                <td>{{order.address}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
